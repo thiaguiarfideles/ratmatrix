@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-5">Formulário</h1>
+      <div class="form-group col-md-6">
+            <a href="/admin/procedimentos/exames/?q=exame">Pesquisar Exames</a>
+          </div>
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="id_nm_profissional">Nome Profissional:</label>
+            <input class="form-control" name="nm_profissional" id="id_nm_profissional" type="text" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="id_nm_empresa">Nome Hospital:</label>
+            <input class="form-control" name="nm_empresa" id="id_nm_empresa" type="text" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="id_nm_cliente">Nome do Médico:</label>
+            <input class="form-control" name="nm_cliente" id="id_nm_cliente" type="text" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="id_email">E-mail:</label>
+            <input class="form-control" name="email" id="id_email" type="email" required>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="id_tel_contato">Telefone Contato:</label>
+            <input class="form-control" name="tel_contato" id="id_tel_contato" type="tel" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="dt_atendimento">Data Alinhamento:</label>
+            <input class="form-control" name="dt_atendimento" id="dt_atendimento" type="date" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="id_intervalo">Intervalo inicial:</label>
+            <input class="form-control" name="intervalo" id="id_intervalo" type="time" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="id_intervalo_inicial">Intervalo final:</label>
+            <input class="form-control" name="intervalo_inicial" id="id_intervalo_inicial" type="time" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="nm_protocolo">Nome Protocolo:</label>
+            <input class="form-control" name="nm_protocolo" id="nm_protocolo" type="text" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="nm_rotina">Nome Rotina:</label>
+            <input class="form-control" name="nm_rotina" id="nm_rotina" type="text" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label>Perfil Tasy:</label>
+          <input class="form-control" name="perfil" id="perfil" type="text" required>
+        </div>
+      </div>
+      <div class='text-center'>
+      <div class="form-group col-md-12">
+        <label for="comentarios">Comentarios</label>
+          <textarea class="form-control" rows="12" name="comentarios" id="id_comentarios"></textarea>
+    </div>
+  </div>
+    <div class="text-center">
+      <div class="input-group input-group-lg">
+          <input class="btn btn-outline-info" type="file" class="form-control-file border" name="upload" id="id_upload" accept="image/*"></input>
+          <input class="btn btn-outline-info" type="file" class="form-control-file border" name="upload" id="id_upload" accept="image/*"></input>
+        </div>
+    </div>
+
+<input type="submit" class="btn btn-default" value="Criar">
+
+
+<input type="submit" value="Salvar e adicionar outro(a)" name="_addanother">
+<input type="submit" value="Salvar e continuar editando" name="_continue">
+
+
+</div>
+    
+        </form>
+
+    </div> 
+
+    <div class="content">
+</div>
+    <footer id="myFooter">
+        <div class="container">
+            <ul>
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Assinatura do Analista Rede D'Or</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div>
+
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Assinatura do Médico</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div>
+
+
+                <li><a href="#">Terms of service</a></li>
+            </ul>
+        <p class="footer-copyright">© 2023 Copyright Thiago.fideles</p>
+        </div>
+<div id="data-hora"></div>
+
+</footer>
+<script>
+      // Função para formatar 1 em 01
+      const zeroFill = n => {
+        return ('0' + n).slice(-2);
+      }
+
+      // Cria intervalo
+      const interval = setInterval(() => {
+        // Pega o horário atual
+        const now = new Date();
+
+        // Formata a data conforme dd/mm/aaaa hh:ii:ss
+        const dataHora = zeroFill(now.getUTCDate()) + '/' + zeroFill((now.getMonth() + 1)) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+        // Exibe na tela usando a div#data-hora
+        document.getElementById('data-hora').innerHTML = dataHora;
+      }, 1000);
+    </script>
+</body>
+</html>    
+
+
+ 

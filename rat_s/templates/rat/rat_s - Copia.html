@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROGTi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+
+<style>
+/*the container must be positioned relative:*/
+
+</style>
+
+<body>
+
+  <h1>Formulario RAT!</h1>
+
+  <form method="post" novalidate>{% csrf_token %}
+    <div class="row">
+      
+      <div class="form-group col-md-5">
+        <label>Consultor:</label>
+          <input class="form-control" name="nm_profissional" type="text">
+      </div>
+      <div class="form-group col-md-5">
+        <label>Nome do Projeto:</label>
+          <input class="form-control" name="nm_empresa" type="text">
+      </div>
+      <div class="form-group col-md-5">
+        <label>Cliente:</label>
+          <input class="form-control" name="nm_cliente" type="text">
+      </div>
+      <div class="form-group col-md-5">
+        <label>Nome contato cliente:</label>
+          <input class="form-control" name="nm_contato" type="text">
+      </div>
+      <div class="form-group col-md-5">
+        <label>Telefone Cliente:</label>
+          <input class="form-control" name="tel_contato" type="text">
+      </div>
+      <div class="form-group col-md-2">
+        <label>Data Inicio:</label>
+          <input class="form-control" name="dt_atendimento" type="date">
+      </div>
+      <div class="form-group col-md-2">
+        <label>Data Fim:</label>
+          <input class="form-control" name="dt_fim_atendimento" type="date">
+      </div>
+    </div>
+      <div class="form-group col-md-5">
+        <label>Servico Contratado:</label>
+          <input class="form-control" name="servico_contratado" type="text">
+      </div>
+      <div class="form-group col-md-2">
+        <label>E-mail:</label>
+          <input class="form-control" name="email" type="text">
+      </div>
+      <div class="form-group col-md-2">
+        <label>Cidade:</label>
+          <input class="form-control" name="cidade" type="text">
+      </div>
+      <div class="form-group col-md-5">
+        <label>Endereco:</label>
+          <input class="form-control" name="ds_endereco" type="text">
+      </div>
+      <div class="form-group col-md-5">
+        <label>Deslocamento ida:</label>
+          <input class="form-control" name="deslocamento_ida" type="text">
+      </div>
+      <div class="form-group col-md-5">
+        <label>Deslocamento volta:</label>
+          <input class="form-control" name="deslocamento_volta" type="text">
+      </div>
+   
+      <div class="form-group col-md-8">
+        <label for="comentarios">Comentarios</label>
+          <textarea class="form-control" rows="8" name="comentarios"></textarea>
+    </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="upload">Upload</span>
+          <input class="btn btn-outline-info" type="file" class="form-control-file border" name="upload" accept="image/*"></input>
+          <input class="btn btn-outline-info" type="file" class="form-control-file border" name="upload" accept="image/*"></input>
+        </div>
+
+         <button class="btn btn-outline-primary" type="submit">Enviar Cadastro</button>
+        </form>
+
+    </div> 
+    <div class="content">
+</div>
+    <footer id="myFooter">
+        <div class="container">
+            <ul>
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Assinatura do Consultor</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div>
+
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Assinatura do Cliente</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div>
+
+
+                <li><a href="#">Terms of service</a></li>
+            </ul>
+        <p class="footer-copyright">© 2020 Copyright ROGTI</p>
+        </div>
+<div id="data-hora"></div>
+
+</footer>
+<script>
+      // Função para formatar 1 em 01
+      const zeroFill = n => {
+        return ('0' + n).slice(-2);
+      }
+
+      // Cria intervalo
+      const interval = setInterval(() => {
+        // Pega o horário atual
+        const now = new Date();
+
+        // Formata a data conforme dd/mm/aaaa hh:ii:ss
+        const dataHora = zeroFill(now.getUTCDate()) + '/' + zeroFill((now.getMonth() + 1)) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+        // Exibe na tela usando a div#data-hora
+        document.getElementById('data-hora').innerHTML = dataHora;
+      }, 1000);
+    </script>
+</body>
+</html>    
+
+
+ 

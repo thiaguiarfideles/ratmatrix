@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+{% extends "base.html" %}
+
+
+{% block title %}PROJETO LAB MATRIX{% endblock %}
+
+<style>
+nav {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #008cba;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.img {
+  width: 40%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.container:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+    .card {
+      max-width: 20rem;
+      margin: 0 auto;
+    }
+
+    .card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.card-img-top {
+  width: 70%;
+  height: auto;
+}
+
+.card-img-top2 {
+  width: 35%;
+  height: auto;
+}
+
+.card-link {
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 140, 186, 0.8);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .3s ease;
+}
+
+
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 992px) {
+  .card-columns {
+    column-count: 4;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card-columns {
+    column-count: 5;
+  }
+}
+
+
+</style>
+
+<nav id="nav" role="navigation">
+  <ul id="menu-menu-1">
+    <!-- outros itens de menu -->
+    <li class="menu-inline menu-item">
+      <a title="Produtos" href="/accounts/login" target="_blank">LOGIN</a>
+        <i class="a-solid fa-circle-plus fa-beat" aria-hidden="true"></i>
+      </a>
+    
+  </ul>
+</nav>
+
+</head>
+<body>
+
+{% block content %}
+    </div> <!-- /.container -->
+    </div> <!-- /.container --> 
+
+<div class="container">
+    <div class="text-right">
+      <img src="media/LOGO_REDE_DOR.png" alt="Logo" style="max-width:15%;height:auto;">
+    </div>
+
+          <div class="text-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Registro e gerênciamento de atividades técnicas</h5>
+                        <div class="overlay"></div>
+                        <img src="media/plan.png" alt="Rat" class="card-img-top2">
+                        <a href="http://127.0.0.1:8000/rat_s/" target="_blank" class="btn btn-primary stretched-link"></a>
+                        <p class="card-text"><small class="text-muted">Clique aqui e registre sua Rat</small></p>
+                    </div>
+        
+        </div>
+    </div>
+
+{% endblock %}
+
+</head>
+</body>

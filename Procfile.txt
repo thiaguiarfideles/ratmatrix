@@ -1,0 +1,1 @@
+web: gunicorn Rat.wsgi --log-file -

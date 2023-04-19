@@ -1,0 +1,48 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}LAB|MATRIX{% endblock %}</title>
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+        <footer class="bg-light text-center text-lg-start">
+            <div class="container p-4">
+              <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                  <p class="text-uppercase fw-bold">LAB|MATRIX</p>
+                  <p class="text-muted">Sua mensagem de rodapé aqui</p>
+                </div>
+          
+          
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase fw-bold mb-4">Contato @Thiago.Fideles</h5>
+          
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#!" class="text-muted">Telefone - (21) 99055-6666</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-muted">E-mail - thiago.fideles@rededor.com.br</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 THIAGO FIDELES LAB|MATRIX. Todos os direitos reservados.
+            </div>
+          </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb
